@@ -1,6 +1,11 @@
-import { Negociacao } from "./models/negociacao.js";
-const negociacao = new Negociacao(new Date(), 100, 100);
-console.log(negociacao);
+import { negociacaoController } from "./controllers/negociacao-controller.js"
 
-console.log(negociacao.volume);
-alert("oi")
+const controller = new negociacaoController();
+
+
+const form = document.querySelector(".form");
+form.addEventListener("submit", event=>{
+    event.preventDefault();
+    controller.adiciona();
+    
+})
